@@ -1,0 +1,46 @@
+<ion-view view-title="Registro">
+  <ion-content>
+    <form name="registrationForm" novalidate="" ng-submit="register(registrationForm,user)" class="list">
+		<label class="item item-input item-stacked-label" ng-class="{ 'has-errors' : registrationForm.displayName.$invalid && registrationForm.$submitted, 'no-errors' : registrationForm.displayName.$valid && registrationForm.$submitted}">
+			<span class="input-label">Nombre</span>
+			<input type="text" name="displayName" ng-model="user.displayName" placeholder="Ana Guerrero" required/>
+		</label>
+		<div class="error-container" ng-show="registrationForm.displayName.$error && registrationForm.$submitted" ng-messages="registrationForm.displayName.$error">
+          <div ng-messages-include="error_list.html"></div>
+        </div>
+
+
+		<label class="item item-input item-stacked-label" ng-class="{ 'has-errors' : registrationForm.email.$invalid && registrationForm.$submitted, 'no-errors' : registrationForm.email.$valid && registrationForm.$submitted}">
+			<span class="input-label">Correo</span>
+			<input type="email" name="email" ng-model="user.email" placeholder="ejemplo@email.com" required/>
+		</label>
+		<div class="error-container" ng-show="registrationForm.email.$error && registrationForm.$submitted" ng-messages="registrationForm.email.$error">
+          <div ng-messages-include="error_list.html"></div>
+        </div>
+
+
+
+		<label class="item item-input item-stacked-label" ng-class="{ 'has-errors' : registrationForm.password.$invalid && registrationForm.$submitted, 'no-errors' : registrationForm.password.$valid && registrationForm.$submitted}">
+			<span class="input-label">Contraseña</span>
+			<input type="password" ng-model="user.password" placeholder="...." required/>
+		</label>
+		<div class="error-container" ng-show="registrationForm.displayName.$error && registrationForm.$submitted" ng-messages="registrationForm.displayName.$error">
+          <div ng-messages-include="error_list.html"></div>
+        </div>
+
+		<button type="submit" class="button button-full button-balanced">Aceptar</button>	
+	  	<div class="row">
+		  <div class="col text-center"><a href="#/login">Ya estoy registrado</a></div>
+		</div>
+	</form>
+	<script id="error_list.html" type="text/ng-template">  
+		<div class="error" ng-message="required">
+			<i class="ion-information-circled"></i> Este campo es requerido!
+		</div>
+		<div  class="error"  ng-message="email">
+			<i class="ion-information-circled"></i> Email invalido
+		</div>
+	</script>
+  </ion-content>
+</ion-view>
+

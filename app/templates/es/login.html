@@ -1,0 +1,41 @@
+<ion-view view-title="Iniciar Sesion">
+  <ion-content>
+    <form name="loginForm" novalidate="" ng-submit="signIn(loginForm,user)" class="list">
+		<label class="item item-input item-stacked-label" ng-class="{ 'has-errors' : loginForm.email.$invalid && loginForm.$submitted, 'no-errors' : loginForm.email.$valid && loginForm.$submitted}">
+			<span class="input-label">Correo</span>
+			<input type="email" name="email" ng-model="user.email" placeholder="ejemplo@email.com" required/>
+		</label>
+		<div class="error-container" ng-show="loginForm.email.$error && loginForm.$submitted" ng-messages="loginForm.email.$error">
+          <div ng-messages-include="error_list.html"></div>
+        </div>
+
+
+		<label class="item item-input item-stacked-label" ng-class="{ 'has-errors' : loginForm.password.$invalid && loginForm.$submitted, 'no-errors' : loginForm.password.$valid && loginForm.$submitted}">
+			<span class="input-label">Contraseña</span>
+			<input type="password" name="password" ng-model="user.password" placeholder="...." required/>
+		</label>
+		<div class="error-container" ng-show="loginForm.password.$error && loginForm.$submitted" ng-messages="loginForm.password.$error">
+          <div ng-messages-include="error_list.html"></div>
+        </div>
+
+		<button type="submit" class="button button-full button-calm">Ingresar</button>	
+	  	<div class="row">
+		  <div class="col text-center">No tienes una cuenta? <a href="#/registration">Registrate aqui</a></div>
+		</div>
+		<script id="error_list.html" type="text/ng-template">  
+			<div class="error" ng-message="required">
+				<i class="ion-information-circled"></i> Este campo es requerido!
+			</div>
+			<div class="error"  ng-message="email">
+				<i class="ion-information-circled"></i> Email invalido
+			</div>
+			<div class="error"  ng-message="wrong_password">
+				<i class="ion-information-circled"></i> Contraseña incorrecta
+			</div>
+			<div class="error"  ng-message="user_not_found">
+				<i class="ion-information-circled"></i> Usuario no encontrado
+			</div>
+		</script>
+	</form>
+  </ion-content>
+</ion-view>

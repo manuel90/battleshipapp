@@ -1,0 +1,9 @@
+<ion-view view-title="Nuevo Juego / Paso 1: Oponente">
+  <ion-content>
+    <div class="list">
+      <a ng-repeat="user in listChooseUsers" class="item item-icon-left item-icon-right" href="" ng-click="chooseOponent(user.id)">
+        <i class="icon ion-ios-person"></i>{{user.displayName}}<i class="icon ion-android-arrow-forward"></i>
+      </a>
+  	</div>
+  </ion-content>
+</ion-view>

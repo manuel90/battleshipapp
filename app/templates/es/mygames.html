@@ -1,0 +1,9 @@
+<ion-view view-title="Mis Juegos">
+  <ion-content>
+    <div class="list">
+      <a ng-repeat="(key, game) in listGames" class="item item-icon-left item-icon-right" href="" ng-click="chooseGame(game)">
+        <i class="icon ion-android-boat"></i>Game ({{game.id}})<i class="icon ion-android-arrow-forward"></i>
+      </a>
+  	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view view-title="Perfil">
+  <ion-content>
+    <div class="list card">
+  	  <div class="item item-avatar">
+  	    <img src="http://simpleicon.com/wp-content/uploads/user-5.png">
+  	    <h2>{{getUser().displayName}}</h2>
+  	    <p>{{getUser().id}}</p>
+        <p>{{getUser().duid}}</p>
+  	  </div>
+  	</div>
+    <div class="list">
+      <div ng-repeat="game in listGameRequest" class="item item-button-right">
+        Game {{$index+1}}
+        <button ng-click="acceptGame(game)" class="button button-positive">
+          <i class="icon ion-android-arrow-forward"></i>
+        </button>
+      </div>
+    </div>
+  	<button ng-click="signOut()" class="button button-block icon-right ion-android-exit button-assertive">Salir</button>
+  	<hr/>
+  	<a href="#/mygames" class="button button-block icon-right ion-android-arrow-forward button-balanced">Mis Juegos</a>
+    <hr/>
+    <a href="#/game/step/1" class="button button-block icon-right ion-android-arrow-forward button-balanced">Nuevo Juego</a>
+  </ion-content>
+</ion-view>
